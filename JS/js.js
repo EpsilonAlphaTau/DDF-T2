@@ -1532,7 +1532,7 @@ function checkAltDone(){
 var prudStarts = [1, 5, 6, 1, 8];
 var prudCalc = ["x 2","+ 3","- 10","+ 7","/ 3","+ 8","+ 9","√","x 3","+ 4","- 7","x 3","x 5","/ 8","+ 15"/*,"","",""*/];
 var toFind = [10, 14, 9, 4, 320];
-var prudCount = 2;
+var prudCount = 0;
 function initPrudence(){
 	getElt('resultat1').innerHTML = prudStarts[prudCount];
 	getElt('resultat2').innerHTML = toFind[prudCount];
