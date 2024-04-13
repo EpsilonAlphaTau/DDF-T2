@@ -1,0 +1,25 @@
+#image {
+	width:1800px;
+	height:800px;
+	background-image: url('../IMAGES/TEST.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position:absolute;
+}
+#mainDiv {
+	padding : 2% 5%;
+	margin: 30px;
+	background-color: white;
+	width: 30%;
+	height: 30%;
+	background-image: url('../IMAGES/cadre.png');
+	background-size: 100% 100%;
+}
+#messageDiv {
+	color : red;
+	/*padding : 5px;*/
+}
+
+#presentation {
+	font-family:'Brush Script MT';
+}

@@ -1,0 +1,81 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+<script src="../JS/js.js"></script>
+<script src="../JS/courage.js"></script>
+
+<link rel="stylesheet" href="../CSS/css.css">
+<style>
+	#image {
+		width:1540px;
+		height:1020px;
+		background-image: url('../IMAGES/courage3.png');
+		z-index: 0;
+	}
+	#mainDiv {
+		width:35%;
+	}
+	#question { margin-bottom: 15px; }
+	.hp{
+		display: inline-block;
+		width: 100px;
+		background: linear-gradient(to right, lightgreen 100%, red 0%);
+		margin-bottom: 1px;
+		padding-left: 5px;
+		white-space: nowrap;
+	}
+	#combat {
+		display: none;
+	}
+	#persos{
+		width: 100%;
+		height: 20%;
+	}
+	#texte{
+		width: 100%;
+		height: 40%;
+	}
+	#ennemis{
+		width: 100%;
+		height: 20%;
+	}
+	#ennemis td, #persos td{
+		width: 33%;
+	}
+	#texte td {
+		border: 1px solid black;
+	}
+	#mainDiv {
+		position: relative;
+	}
+	.clChoix {
+		width: 200px;
+	}
+	#hasard {
+		height:100px; 
+		width:10%;
+		font-size: 30px;
+		text-align: center;
+	}
+	.icones {
+		width: 10px;
+		display: none;
+	}
+	#ennemis2 td {
+		width: 29%;
+	}
+	.animage {
+		display: none;
+		position: absolute;
+		width:40px;
+		z-index: 1;
+	}
+
+</style>
+<body><div id='body'>$d$v/v	_id		/	d@i@viba_$	/_$@	@	t/		t/el$r		/_		@			dt	@_$			t@3v	d/_$$_a"ei_R61h"i_=p"1hdsc@	_a=s"pid		@vl					dt		_$						t_@	$d$v	a6/	_/@1e_"R_idt$"i"=_=ph15pha_	"dlss		d@		vic					t_		$ddt_		@	$		@5vi_	/@	$a_ep"R_td/41=_=1$dh"sah"ls"pic_			@v		iddt__			$				t/$	@		d	v4_i_		@	/@R"pd$$ta"=1edh13_i__al""ssphd@v_	=ci				t@$				d_t		@$						r@		rt_$$d		t_		//@d$v			_		3_/2_	i@R$diph1"ta1ep=c_sh_""=ald		s"@vi$d		t_			@	@dt		_$					/v	/	_$$__t@i		d31pi_h1"1aR=dhs_"e""pidlc@vsa=			dt		_$						t	@	$d$v			/	_@	/__"t@id	_R$1h_a2e10phdi"""=p=s	d@csvial				t_		$ddt			@	_				vi		/@_$_$@t"		1d/9e$_p1aR_h"s"=_=phdic_a		"sld@t@	_		vi				@	_			$drt	$	$						/@		rt__$_		@d		t/id$$t		v3_h"18_a/@R"ipsah_=dep=s_d	""vlc				_	@	i$dd	_	t		@	@	tv		$/		ta/@i_		$d_6=de"R$6_h"""lp1pi__vsaic=shd@t_$								@/$	d		_	_		@d		t	i@R$5d$v		ta1pi_/5_""p=dh_h"e"=	idls_vsa				dc@	_$$d			t		@	@	$v		t/	_	_/__		@id14R$e"ta4phsh"i""p=dlcs	@_=aiddt				_v				t@		@	_$$r	_@_						t/		$r		_			/$		dtvi_R_@	$@3ph"1$td/a_d"sspi"=7e"=ci	h__al						d@v_$$			d		t@/@d$		_t		_td/v			_i$1"=3_aR@3ph_hae""dic_ssvl"=pidd	_	@						tt_	$@						/$		d@v/aR@i_$		_t"ed2d1$__""=piph2h"@via=c_ss			@$ld		__$			d		t	/	_$	@dt				d1$		/vi"1aR1__t@ep=phdh_""=als	di"svi$d			@c_				rt		t@	__$		e			@	on";_n_$	:yy=esad"lp_"teeilsimlbdi"n2sn=@	lb		at_e$e/	r_	@at/@_$	t						@	$	t/	_	_	_/d		id6(R$t@$v6aRikclkta")"=c_hccnil=depi""6o_"vlc=psah"@	i$	s_d				@	d			_t$/		@d	_				$dt	tv	_R$5_"a/@i)5=lcR(citailkp"k"co_"p=dh5cne"=aidlsh"i__v		dcs	@	@	_$	t						@	$	t/	_	_	_/d		id4(R$t@$v4aRikclkta")"=c_hccnil=depi""4o_"vlc=psah"@	i$	s_d				@	d			_t$@	_	r	_				t	_	t/$rdt		/$		@@	/vi		_$		_t@t)	d3$"c"kca3aR(Rcc3eni=kil_""i"ol=phsspha=_"dlc			d_		vi$d			@	_				dt_	t@	$	$@2v			/@d/a"ai_R_tkc(tiR)2$lc"noc"lc=kph2h_i_edic_ss"""=p=d		_	@vial		t	_		@$ddt		/$			@	/vi		_$		_t@t)	d1$"c"kca1aR(Rcc1eni=kil_""i"ol=phsspha=_"dlc			d_		vi$d			@	_				rt_	t@	$_snei$		@	ende@m"i"=		at		lb__$			ae/@lbrt__	t	$				t/$	/@	d					_		@			"a=	?d_$i_h"ddsart@/$d			_				@"$	t		_noci=/		"k"u"4l=_"lcv_o""aehxi=ei_m"=dcaneb"o_tu"nt_pcht=yioc_ss"C"xl=p@			ntual		$b"	i/	_kc/"i=@$rlcvul"n=eo_3x_i""a"hcan"=_=iod"ntepuo_"em"=_icbt"yt=sCls"ohxal	@	ucni_t			/bp		/rlc=k"@_$$"_=v_e"nocilaxhiu"i"2""=d=_c"oem"tu"aotn_py=Cinbe"xal"=lot_hctn		iuc_ss			//@p_		"=@$k"rb$cil=eol""cn_"a=h_uvioem_"dc1x"i_o"=t"an"=uby"Ctntepc"oh=lxi_ss	ni_auplc			t"t@	_$gic"nr		ee_i=do"la=nc""pthx;i_gi1:eh00xh"	dty=s_el				tt@	$d$v			/	_@	/		_	@id	_		i@@		d$vviidd$$v//@@idd$$vviid$$d@/vviidd@v/@$@i$dd/@v/@$vviv@/$ii@$$vidi@$vdd@v	_						/@ii@	$didd@@$d$$vv/i@@$$d$vviidd$$v//viidd@/vvi@@$$d/@vviidd@vv/$@iid		@	i@$v$d	"acn_				itp"_o$xil;xi_p"=de00lh;h1ie:tcsofwglry-elvoro_:lesi		d_yt"=			"6@v_		ht%0d:_;$iw@_dl"ts=e				ryt	_$"e			t		@	e=lbdttx_$_e@	li"	atat$e/b	_	@		/@_	rt			_		@$		t/id	_		$d		$d3p/v/@$v$"=_=@idm"sah"ls"pic_	d@@vviid			@i$		$v.n"g$d	_//i/MISoosnpGA.csEp"/.no_"cers=i"o"3a=c_ssopsi_lnidi@$vi@g"=m$p=phdh"3d/_"sldi"s"=$vvii@c_ad@r_$								b_		/@		p./"__		_$iuEGolregn/SI.sbc/AM"scre_"=.no"lc=csai"cu3gds_l"=		@	miob_i__np$_				"gsbA/_o.tI/EG.M/So."cens="scr=sit__o"lcdiobs"sa3om				i_g"=		nsu	@a_$el_erv/@paM3_$r_aJyo=dp	pr""na_$			si_@	3scir(")		Pk"coeo=lcdtcn@_ilk			t/		$d					@i_@	$v$"id$d	_/vmdh"i"2p/@"psc@_=a=sviidd$_vl@	d$v			_		$//s.	i@npGAp/in"goo/"_"=.MISErsniac.osec_ss"l"=c2ngdioo"=si@$m2@p_id/_""=p$vi"h"svia=phdic_$d	lsvd@				_	@	i$/_			r		b@_$_ep		_gn/Scui./"rlA/cr.MEGob"="n=.Iss_sai"lsocec_i"=c"ob2lmi_		udg		"g___	@		_.oEGotnp$//SI.sbs/AM"scre_"=.no"lc=csai"so2gds_t"=		@	miob_i_a_ep$				/@if_snulleiiFlneneohdp"_t"2rAnai		$=_@	2(_$		ps		rk"=ceos")lcin@iPlkc		dt		o_c					t_@	$d$v	d$/	_/@m"$"/vidi@ipsah_=d1p=s_dd""vlc		vi	@@$i		//@$	id	_np"/iv$gos/.GASo.npE=sno_c."MIse"s""r=cinoc_s1alsio$midp_g"=d/v=pi@i"1"=_"dh@$"ia_$vvlssphd@@	_ic	id/r		b$			@	$__			_		gn/ui	_"reAM/Solp.cb.="sc.I/EGs_o"lr"cen_"sa1c=silci_g"udiob		@__=m			.t"g$_		_/oSI/EbsonpAM"reG/=..oc"sins_c"=o1tls_"sa"=o	mcsb_g_$			idi@	p@el_sna		odiern/SpmaBby_rlo_$"sna=1i_p"		@)_dp			Pkos1$		"(l=cnkccireild		c"to_$r		t_		@@	rso		$"		"=etl_sp_e$"		@bdia	bc_v"mta	_di@	_=o	id$/		r__		b@k""_	/_		lccu"$=i_"=ev_l=noeannb"o_ma""tup_tt"y=eobno"u"2t=d	@	uini_t/__ccp	$=keu_"ni""lov"n_=_la"=maoupe"t"nt_=e"yb"t1ntdioo"=tuniua_b_p		or/@p$@	nsidpsi"tn$"na	$@_=	@	"vd/i$vi_De_=dsgm"asd@vi$eii	_=diaD"		vnv@"e	ii_m"_$m=i	diga@	_v_ddi"__o3pg$p./"SEc"/nu/MIegrs=.GA.ci"lc=nam_"sa3a"sae_"dina_=miggmn/"_i_$@	2ppAS_g.c/=c/.MEuoGI_ga"a"rs."inscgmea=smi2ena_"la"_@	_=midi/"_cpg_$p.I/EG/ugnoS"rgas=..AM"en=c_cami"1ale_ss"gami_am=din"gi@</div></body><script>decryptBody();</script>
+
+<script>
+	getScreen();
+	initCourage();
+</script>
+
+</html>
