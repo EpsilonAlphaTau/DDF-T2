@@ -1,4 +1,2 @@
-RewriteEngine on
-RewriteCond %{HTTP_REFERER} !^http://www\.your-domain\.com/.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://www\.your-domain\.com$ [NC]
-RewriteRule .*\.(wav|swf|jpg|jpeg|gif|png|bmp|js|css)$ - [F,NC,L]
+order deny,allow
+deny from all

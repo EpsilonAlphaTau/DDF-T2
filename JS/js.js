@@ -258,6 +258,8 @@ function updateEpreuve(){
 		show('finD');
 		getElt('bfin').onclick = () => gotoHidden('t2ee');
 		return;
+	} else {
+		hide('finD');
 	}
 	innerHtml('nombre', 12 - nombreDeVertues());
 	var ep;
