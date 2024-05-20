@@ -797,7 +797,7 @@ function displayQuestionHonnetete(){
 				console.log(currentQuestion);
 			}
 		}
-		if (equiv > questionsHonnetete.length * 0.8) {
+		if (equiv > questionsHonnetete.length * 0.7) {
 			gotoHidden('templeHonnetete');
 		} else {
 			gotoMessage('presentationHonnetete',"Vous n'êtes pas assez honnête pour que je vous fasse passer l'épreuve, déclare le clerc");
