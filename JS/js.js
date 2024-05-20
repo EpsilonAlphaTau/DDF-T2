@@ -886,10 +886,11 @@ function aborderClerc() {
 	var elt = getElt('boutonTemperance');
 	elt.value = 'Le courage';
 	elt.onclick = () => goto('presentationCourage');
+
 	elt = getElt('boutonTemperance2');
 	show('boutonTemperance2');
 	elt.value = 'La Tempérance';
-	elt.onclick = () => goto('templeTemperance');
+	elt.onclick = () => gotoHidden('templeTemperance');
 	timeOut(5000, clercEnerve, '');
 }
 function clercEnerve() {
