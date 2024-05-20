@@ -942,7 +942,7 @@ function force(val) {
 		break;
 	case 4:
 		specialEvent = '0';
-		goto("Luciandath");
+		goto("luciandath");
 		break;
 	case 5:
 		if (specialEvent === '2') {
@@ -965,7 +965,7 @@ function force(val) {
 		break;
 	case 6:
 		specialEvent = '1';
-		goto("Luciandath");
+		goto("luciandath");
 	 	break;
 	case 7: //chercher du travail
 		setChoicesForce("Quel genre d'emploi voudriez-vous occuper ?",
