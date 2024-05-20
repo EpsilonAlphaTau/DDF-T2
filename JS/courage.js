@@ -15,7 +15,7 @@ function initCourage(){
 	}
 	var elt = getElt('bouton2');
 	elt.value = "Retourner a Luciandath";
-	elt.onclick = () => goto('Luciandath');
+	elt.onclick = () => goto('luciandath');
 }
 
 function fuirCourage() {
@@ -26,7 +26,7 @@ function fuirCourage() {
 	var elt = getElt('bouton2');
 	show('bouton2');
 	elt.value = "Retourner a Luciandath";
-	elt.onclick = () => goto('Luciandath');
+	elt.onclick = () => goto('luciandath');
 }
 
 
