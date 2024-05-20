@@ -1039,6 +1039,7 @@ function force(val) {
 		}
 	 	break; 
 	case 18:
+		show('timerDisplay');
 		forceInterval = setInterval(displayForceTimer, debug ? 200 : 1000);
 		innerHtml('intro',"Il sera là avant que vous ayez le temps de compter jusqu'à 100 ! Prenez une infusion en attendant!");
 		setForceBouton('bouton1',"Ne plus attendre", 19);
@@ -1048,8 +1049,9 @@ function force(val) {
 	 	break; 
  	case 19: //2eme visite
 		hide('timerDisplay');
+		clearInterval(forceInterval);
 		setChoicesForce("Quelle partie de Gardénia souhaitez-vous visiter maintenant ?",
-			"La guilde des bardes", 20, "La taverne du Minéa", 21, "", -1);
+			"La guilde des bardes", 20, "La taverne du Minéa", 21, "Retourner à Luciandath", 4);
 		break;
 	case 20:
 		setChoicesForce("Les bardes sont en train de jouer à un jeu de dé. Ils vous proposent de jouer avec eux. Avec deux dés 6, il faut faire le plus grand nombre pour emporter la mise !",
@@ -1125,10 +1127,9 @@ function force(val) {
 			"Continuer dans le bourg", 19, "", -1, "", -1);
 	 	break;
 	case 33:
-		monnaieSud -= 960;
  		removeEpreuve('honnetete');
 		displayMonnaie();
- 		setChoicesForce("Vous disposez désormais d'une superbe épée ! Le vendeur a indiqué qu'elle augmenterait votre force et votre résistance, et qu'elle avait des pouvoirs secrets...",
+ 		setChoicesForce("Vous disposez désormais d'une superbe épée ! ",
 			"Continuer dans le bourg", 19, "", -1, "", -1);
 	 	break;
 	 case 34:
@@ -1193,7 +1194,7 @@ function force(val) {
 		innerHtml('timerDisplay', '');
 		hide('timerDisplay');
 		setChoicesForce("Le vieil homme vous remercie de lui avoir donné tout votre argent.",
-				"Visiter le bourg", 0, "", -1, "", -1);
+				"Donner votre argent", 39, "Visiter le bourg", 0, "", -1, );
 	 	break;
 	}
 }
