@@ -54,12 +54,13 @@ function checkBonte(num) {
 		break;
 	case 4 :
 		getElt("mainDiv").style.height = '20%';
-		document.getElementById("mainDiv").removeEventListener("click", doHide);
 		setNewRoom("U2FsdGVkX19aMIoJUS94jRLozawn0h6j2aZrOqLYI3s=", 
 			"<i>Oui, profitons-en ! Il faut descendre ensuite, nous ne sommes plus près de voir la lumière...</i> ", num + 1, 
 			"U2FsdGVkX1+M8lKsnqfQqdlvJchaxLlB9a4zaTOkj6E=");
 		break;
 	case 5 :
+		getElt("mainDiv").style.height = '20%';
+		
 		if (!setNewRoom("U2FsdGVkX1+X79BXG/6ZJTXEGbXUZVKwTNQ00QNMaq4=", 
 			"Vous descendez un coridor étroit. Vous voici encore plus enfoncé sous terre... Il y a de nombreux chemins à suivre, et vous n'y voyez plus rien.", num + 1, 
 			"U2FsdGVkX18M3JCtyRGKjrLR47IMf9jjuj5g5EQPP5s=")) {
@@ -334,6 +335,7 @@ function setLabyCheck(i, target){
 }
 function setNewRoom(reponseCode, text, target, image){
 	if (doDecCheat(reponseCode) == getElt("reponse").value.trim().toUpperCase()) {
+		document.getElementById("mainDiv").removeEventListener("click", doHide);
 		innerHtml('intro', text);
 		getElt("reponse").value = "";
 		getElt("bouton1").onclick = () => checkBonte(target);

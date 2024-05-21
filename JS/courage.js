@@ -885,7 +885,7 @@ function deusExMachina(dommage){
 	case 12:
 		explique("A l'aide de ses dernières forces","#eba45a");
 		explique("Jarroy vous rend vos pv","#eba45a");
-		persos.personnage1.hp = persos.personnage1.hpMax;
+		persos.personnage1.hp = 120;
 		break;
 	case 13: return 0;
 	case 14: return 0;
