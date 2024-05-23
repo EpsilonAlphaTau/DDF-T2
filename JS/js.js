@@ -100,7 +100,7 @@ function getScreen(toCheck) {
 	console.info("E" + screen.width + '' + screen.height + '' + screen.pixelDepth + '' + window.navigator.appVersion);
 	encrypter = CryptoJS.AES.encrypt(screen.width + '' + screen.height + '' + screen.pixelDepth + '' + window.navigator.appVersion, 'dhmis');
 	console.info(encrypter.toString());
-	encrypter = encrypter.toString().substring(0,5);
+	encrypter = encrypter.toString().substring(10,15);
 	console.info(encrypter);
 	try {
 		readDataCode();
