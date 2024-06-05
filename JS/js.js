@@ -97,11 +97,11 @@ function doGetCodeFor(item)
 }
 
 function getScreen(toCheck) {
-	console.info("E" + screen.width + '' + screen.height + '' + screen.pixelDepth + '' + window.navigator.appVersion);
+	//console.info("E" + screen.width + '' + screen.height + '' + screen.pixelDepth + '' + window.navigator.appVersion);
 	encrypter = CryptoJS.AES.encrypt(screen.width + '' + screen.height + '' + screen.pixelDepth + '' + window.navigator.appVersion, 'dhmis');
-	console.info(encrypter.toString());
+	//console.info(encrypter.toString());
 	encrypter = encrypter.toString().substring(10,15);
-	console.info(encrypter);
+	//console.info(encrypter);
 	try {
 		readDataCode();
 		if (debug !== true && toCheck !== undefined && toCheck !== gotoCode) {
