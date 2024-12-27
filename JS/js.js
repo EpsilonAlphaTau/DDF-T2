@@ -1,14 +1,14 @@
 
 var encrypter;
 var debug = false;
-function doEnc(item) {
+/*function doEnc(item) {
 	var encrypted = CryptoJS.AES.encrypt(item, encrypter);
 	return encrypted.toString();
 }
 function doDec(item) {
 	var decrypted = CryptoJS.AES.decrypt(item, encrypter);
 	return decrypted.toString(CryptoJS.enc.Utf8);
-}
+}*/
 function doEncCheat(item) {
 	var encrypted = CryptoJS.AES.encrypt(item, 'dontcheatplease!');
 	return encrypted.toString();
@@ -132,7 +132,9 @@ function innerHtml(id, html) {
 	document.getElementById(id).innerHTML = html;
 }
 function hide(id){
-	document.getElementById(id).style.display = 'none';
+	var elt = getElt(id);
+	if (elt !== null)
+		elt.style.display = 'none';
 }
 function show(id){
 	document.getElementById(id).style.display = 'block';
@@ -140,13 +142,7 @@ function show(id){
 function showInline(id){
 	document.getElementById(id).style.display = 'inline-block';
 }
-function goto(page){
-	window.location = './'+page+'.html?id='+getDataCode();
-}
-function gotoHidden(page){
-	gotoCode = page;
-	goto(page);
-}
+
 function gotoMessage(page, m){
 	message = m;
 	gotoCode = page;
@@ -183,7 +179,7 @@ var message = '';
 var gotoCode = '';
 var epreuvesReussies = '000000000000';
 var preEpreuvesReussies = '000000000000';
-var lastEpreuve;
+var lastEpreuve = -1;
 var specialEvent = 0; //1 force
 var monnaieSud = 60;
 function getDataCode() {
@@ -195,16 +191,19 @@ function getDataCode() {
 	+ separator + monnaieSud
 	+ separator + preEpreuvesReussies
 	;
-	return doEnc(toEncrypt);;
+	return doEncCheat(toEncrypt);
 }
 function readDataCode(){
 	var queryString = window.location.search;
 	if (queryString.length > 0)
-	{
 		queryString = queryString.substring(4);
-		var decrypted = doDec(queryString, encrypter);
+	else 
+		queryString = getCookie();
+
+	if (queryString.length > 0)
+	{
+		var decrypted = doDecCheat(queryString, encrypter);
 		decrypted = decrypted.split(separator);
-		console.log(decrypted);
 		message = decrypted[0];
 		gotoCode = decrypted[1];
 		epreuvesReussies = decrypted[2];
@@ -214,9 +213,18 @@ function readDataCode(){
 		preEpreuvesReussies = decrypted[6];
 	}
 }
-
+function goto(page){
+	var s = getDataCode();
+	setCookie(s);
+	//console.info(">>>>>" + s);
+	window.location = './'+page+'.html?id='+s;
+}
+function gotoHidden(page){
+	gotoCode = page;
+	goto(page);
+}
 function removeEpreuve(which) {
-	var x = epreuvesReussies; x='000100000000'
+	var x = epreuvesReussies; //x='000100000000'
 	console.log('=>' + x);
 	switch(which) {
 	case 'discernement': epreuvesReussies = setStr(epreuvesReussies, '0', 0); break;
@@ -400,6 +408,7 @@ function setShortCut(epreuve) {
 	}
 }
 function setQuestionForm(next, code){
+	//console.info("preEpreuvesReussies" + preEpreuvesReussies);
 	preEpreuvesReussies = setStr(preEpreuvesReussies, '1', getNumberFromEpreuve(code.substring(6).toLowerCase()));
 	questionNext = next;
 	gotoCode = code;
@@ -1591,4 +1600,34 @@ function initEE(){
 		goto('luciandath');
 	hide('mainDiv');
  	getElt('image').style.backgroundImage = "url('../IMAGES/eet2.png')";
+}
+
+
+function setCookie(cvalue) {
+	setCookieName(cvalue, 'ddfbgt');
+}
+function setCookieName(cvalue, name) {
+  const d = new Date();
+  d.setTime(d.getTime() + (1000*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie() {
+	return getCookieName('ddfbgt');
+}
+function getCookieName(nom) {
+  let name = nom + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
